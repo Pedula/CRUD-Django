@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="{% url 'contato.views.criar_contatos' %}" method="post" class="formee">
+         {% csrf_token %}
+
+         {% if form.non_field_errors %}
+               <div class="error">
+                  {{ form.non_field_errors }}
+               </div>
+        {% endif %}
+
+        {{ form.as_p }}
+
+        <br>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+
+{%endblock%}

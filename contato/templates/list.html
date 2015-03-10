@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<table>
+<tr>
+	<table border= "1" class="table" c>
+	<tr>	
+		<th align="center"> Nome</th>
+		<th align="center">	Fixo</th>
+		<th align="center">	Celular</th>
+		<th align="center">	email</th>
+		<th align="center">	endereco</th>
+		<th align="center">	editar</th>
+		<th align="center"> excluir</th>
+	</tr>
+
+{% for contato in contatos %}
+
+	<td>{{contato.nome}}</td>
+	<td>{{contato.fixo}}</td>
+	<td>{{contato.cel}}</td>
+	<td>{{contato.email}}</td>
+	<td> {{contato.endereco}}</td>
+	<td{{contato.editar}} align="center">
+		<form action="/contato/editar/{{contato.id}}">
+			<input type="submit" value="Editar">
+	</td>
+		</form>
+	<td{{contato.excluir}} align="center">
+		<form action="/contato/excluir/{{contato.id}}">
+			<input type="submit" value="Excluir">
+	</td>
+		</form>
+</tr>
+{% endfor%}
+</table>
+<a href="/contato/criar">Criar novo contato</a>
+</td>
+</tr>
+</table> 
+
+{%endblock%}

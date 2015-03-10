@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<legend>Excluir?</legend>
+    <p>{{ contato.nome }}</p>
+   
+    <form action="#" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Sim">
+    </form>
+{%endblock%}
