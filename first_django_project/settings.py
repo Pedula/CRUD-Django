@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'contato',
+    'login',
+
         
 )
 
@@ -85,3 +87,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+LOGIN_URL = '/entrar/'
+LOGOUT_URL = '/sair/'
+LOGIN_REDIRECT_URL = '/contato/'
