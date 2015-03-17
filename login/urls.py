@@ -5,6 +5,6 @@ urlpatterns = patterns('login.views',
     
 
    	url(r'^entrar','login'),
-#    url(r'^sair','logout'),
+	url(r'^sair','sair'),
 	
 )

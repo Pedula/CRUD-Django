@@ -1,20 +1,31 @@
 {% extends "baseLogin.html" %}
+
+
 {% block content %}
-<form action="#" method="post" class="formee">
-         {% csrf_token %}
 
-         {% if form.non_field_errors %}
-               <div class="error">
-                  {{ form.non_field_errors }}
-               </div>
-        {% endif %}
 
-        {{ form.as_p }}
 
-        <br>
-
-        <button type="submit" class="btn btn-primary">Entrar</button>
+<form method="post"  class="formee form-horizontal" action="{% url 'login.views.login' %}">
+	{% csrf_token %}
+	<div  class="grid-6-12" >
+		<fieldset>
+		<legend>Entrar</legend>
+			<div    class="grid-6-12">
+				<label  for="txUsuario">login</label>
+					{{ form.usuario }}
+			</div>
+			<div  class="grid-12-12" >
+				<label for="textSenha">Senha <em class="formee-req">*</em></label>
+					{{ form.senha }}
+			</div>
+			<div class="grid-12-12">
+				<input class="btn btn-primary" type="submit" value="login" />
+				<!--<a href="/perfil/registrar/" class="btn btn-default ">Registrar</a>-->
+				<input type="hidden" name="next" value="{{ next }}" />
+			</div>
+		</fieldset>
+	</div>
 </form>
 
+{% endblock %}
 
-{%endblock%}

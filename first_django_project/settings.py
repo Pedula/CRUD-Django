@@ -88,5 +88,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/entrar/'
-LOGOUT_URL = '/sair/'
 LOGIN_REDIRECT_URL = '/contato/'
