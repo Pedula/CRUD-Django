@@ -12,9 +12,9 @@ urlpatterns = patterns('',
     # url(r'^$', 'first_django_project.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-   	url(r'^$','contato.views.index'),
+
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^',include('contato.urls')),
-
+	url(r'^',include('login.urls')),
 	
 )
